@@ -5,10 +5,15 @@
   </div>
 </template>
 
-<script setup>
-// import getStopPointInfo from "../utils/stopPointService";
+<script setup lang="ts">
+// import { trimStopPointNames } from "../utils/utils";
+// import { StopPointModes } from "../typings/StopPointMode";
+
 onMounted(() => {
   console.log("mounted");
-  // const pointInfo = getStopPointInfo();
+  // const oldName = "Royal Victoria DLR Station";
+  // const mode: StopPointModes = StopPointModes.dlr;
+  // const newName: string | undefined = trimStopPointNames(oldName, mode);
+  // console.log("new name", newName);
 });
 </script>
