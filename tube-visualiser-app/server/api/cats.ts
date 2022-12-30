@@ -22,18 +22,17 @@ export default defineCachedEventHandler(
         )
       );
     });
-    Promise.all(promises).then((values) => {
-      // console.log("data from api: ", values);
-      values.forEach((pointData, index) => {
-        stopPointCrowdingList[index].dataAvailable = pointData.dataAvailable;
-        stopPointCrowdingList[index].percentageOfBaseline =
-          pointData.percentageOfBaseline;
-        stopPointCrowdingList[index].timeUtc = pointData.timeUtc;
-        stopPointCrowdingList[index].timeLocal = pointData.timeLocal;
-      });
-      console.log("crowding list: ", stopPointCrowdingList);
-      return stopPointCrowdingList;
+    const values = await Promise.all(promises);
+    // console.log("data from api: ", values);
+    values.forEach((pointData, index) => {
+      stopPointCrowdingList[index].dataAvailable = pointData.dataAvailable;
+      stopPointCrowdingList[index].percentageOfBaseline =
+        pointData.percentageOfBaseline;
+      stopPointCrowdingList[index].timeUtc = pointData.timeUtc;
+      stopPointCrowdingList[index].timeLocal = pointData.timeLocal;
     });
+    // console.log("crowding list: ", stopPointCrowdingList);
+    return stopPointCrowdingList;
   },
   { swr: true }
 );
