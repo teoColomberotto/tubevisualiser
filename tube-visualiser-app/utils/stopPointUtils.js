@@ -1,12 +1,6 @@
 import stopPointInfo from "../assets/stoppointinfo/stopPointInfo.json";
-// import {
-//   IStopPointInfo,
-//   IStopPointsList,
-// } from "../typings/stopPointInfoInterface";
 
-const getStopPointInfo = () => {
-  // console.log(stopPointInfo.stopPoints);
-  // const stopList: IStopPointsList = stopPointInfo;
+export const getStopPointInfo = () => {
   const stopPointInfoList = [];
   stopPointInfo.stopPoints.forEach((point) => {
     const stopInfo = {
@@ -27,4 +21,3 @@ const getStopPointInfo = () => {
   a.click();
   console.log("done");
 };
-export default getStopPointInfo;

@@ -2,6 +2,8 @@ export interface IStopPointInfo {
   id: string | undefined;
   commonName: string | undefined;
 }
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface IStopPointInfoList extends Array<IStopPointInfo> {}
 
 export interface IStopPointsList {
   $type: string | undefined;
